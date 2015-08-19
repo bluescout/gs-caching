@@ -29,6 +29,18 @@ public class Application {
             log.info(".... Fetching books");
             log.info("isbn-1234 book -->" + bookRepository.getByIsbn("isbn-1234"));
             log.info("isbn-1234 title -->" + bookRepository.getTitleByIsbn("isbn-1234"));
+            log.info("isbn-1234 book -->" + bookRepository.getByIsbn("isbn-1234"));
+            log.info("isbn-1234 title -->" + bookRepository.getTitleByIsbn("isbn-1234"));
+            
+            log.info("best book -->" + bookRepository.getBestBook());
+            log.info("worst book -->" + bookRepository.getWorstBook());
+            log.info("book by long id -->" + bookRepository.getById(1234L));
+            log.info("book by string id -->" + bookRepository.getById("1234"));
+
+            log.info("best book -->" + bookRepository.getBestBook());
+            log.info("worst book -->" + bookRepository.getWorstBook());
+            log.info("book by long id -->" + bookRepository.getById(1234L));
+            log.info("book by string id -->" + bookRepository.getById("1234"));
         }
     }
 
