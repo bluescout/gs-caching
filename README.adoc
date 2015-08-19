@@ -17,6 +17,20 @@ projects: [spring-framework]
 :source-highlighter: prettify
 :project_id: gs-caching
 
+== Purpose of this fork
+
+I've forked this giude to reproduce https://jira.spring.io/browse/SPR-8933 "Caching Abstraction ignores method name",
+that was considered irrelevant by Spring developers and resolved with "Won't Fix", and @Cacheable still does not use method
+name for cache key. 
+
+This means methods with the same set of parameters will use the same cache entries despite name and return
+type. For example, Details fetchPersonDetails(String ssn) and Roles fetchPersonRoles(String ssn) will produce ClassCastException
+when annotated with @Cacheable and called one by one.
+
+The workaround is to set key generation expression explicitely, as suggested in the comment https://jira.spring.io/browse/SPR-8933?focusedCommentId=77118&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-77118
+
+== Original spring-guides documentation
+
 This guide walks you through the process of enabling caching on a Spring managed bean.
 
 == What you'll build
