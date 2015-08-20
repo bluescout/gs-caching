@@ -2,16 +2,17 @@ package hello;
 
 public interface BookRepository {
 
-    Book getByIsbn(String isbn);
-
-    String getTitleByIsbn(String isbn);
-
+    Integer getCallsCount(String methodName);
+    
     Book getBestBook();
-
     Book getWorstBook();
     
     Book getById(long id);
+    Book getByOtherId(long id);
     
-    Book getById(String id);
+    Book getByIsbn(String isbn);
+    String getTitleByIsbn(String isbn);
 
+    Book getByArray(int[] id);
+    Book getByOtherArray(int[] id);
 }
